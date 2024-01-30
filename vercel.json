@@ -3,12 +3,9 @@
     "builds": [
       {
         "src": "src/api/server.js", 
-        "use": "@vercel/node"
-      },
-      {
-        "src": "public/**/*",
-        "use": "@vercel/static"
+        "use": "@now/node"
       }
+      
     ],
     "routes": [
       
