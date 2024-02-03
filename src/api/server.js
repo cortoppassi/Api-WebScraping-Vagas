@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json())
 app.get('/', async (req, res) => {
   // Launch the browser and open a new blank page
-  const browser = await puppeteer.launch({headless: true});
+  const browser = await puppeteer.launch({headless: false});
   const page = await browser.newPage();
   const vagasArray = [];
 
@@ -40,9 +40,8 @@ app.get('/', async (req, res) => {
    
   }
 
-  await browser.close();
-
   res.json(vagasArray);
+  await browser.close();
 });
 
 app.listen(port, () => {
