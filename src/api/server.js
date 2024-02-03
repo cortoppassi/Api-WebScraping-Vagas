@@ -5,9 +5,10 @@ const cors = require('cors');
 const app = express();
 const port = 3001;
 app.use(cors());
+app.use(express.json())
 app.get('/', async (req, res) => {
   // Launch the browser and open a new blank page
-  const browser = await puppeteer.launch({headless: false});
+  const browser = await puppeteer.launch({headless: true});
   const page = await browser.newPage();
   const vagasArray = [];
 
